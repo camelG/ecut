@@ -41,7 +41,7 @@ public class UserMapperTest extends BaseTest{
 	@Test
 	public void findAll() throws Exception{
 		List<User> users= mapper.queryAll();
-		
+		logger.info("logger............");
 		for(User user:users){
 			System.out.println(user.toString());
 		}
