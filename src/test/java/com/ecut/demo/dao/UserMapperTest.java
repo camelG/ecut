@@ -19,6 +19,8 @@ package com.ecut.demo.dao;
 import java.util.List;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.ecut.demo.BaseTest;
 import com.ecut.demo.entity.User;
@@ -31,12 +33,15 @@ import com.ecut.demo.entity.User;
  */
 public class UserMapperTest extends BaseTest{
 	
+	private Logger logger=LoggerFactory.getLogger(this.getClass());
+			
 	@Autowired
 	private UserMapper mapper;
 	
 	@Test
 	public void findAll() throws Exception{
 		List<User> users= mapper.queryAll();
+		
 		for(User user:users){
 			System.out.println(user.toString());
 		}
