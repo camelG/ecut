@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- 用于激活那些已经在spring容器里注册过的bean（无论是通过xml的方式还是通过package sanning的方式）上面的注解 -->
+    <context:annotation-config/>
+    
+	<!--在xml配置了这个标签后，spring可以自动去扫描base-pack下面或者子包下面的java文件，
+		如果扫描到有@Component @Controller@Service等这些注解的类，则把这些类注册为bean -->
+    <context:component-scan base-package="com.ecut.demo">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+    <!-- Add new DAOs new Managers -->
+
+    <import resource="applicationContext-mybatis.xml"/>
+
+    <import resource="applicationContext-service.xml"/>
+    
+    <import resource="applicationContext-web.xml"/>
+    
+    
+    <!-- 如何在spring中读取properties配置文件里面的信息	 -->
+	<!-- <util:properties id="propConf" location="classpath:common.properties"/> -->
+
+</beans>
