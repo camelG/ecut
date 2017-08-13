@@ -32,4 +32,5 @@
     <!-- 如何在spring中读取properties配置文件里面的信息	 -->
 	<!-- <util:properties id="propConf" location="classpath:common.properties"/> -->
 
+
 </beans>

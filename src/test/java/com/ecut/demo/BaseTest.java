@@ -24,11 +24,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * @title:测试基类
  * @description:junit启动时加载springIOC容器 spring-test,junit
- * @author asua
+ * @author songshuiyang
  * @date 2017年7月16日
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"classpath:spring/applicationContext-service.xml","classpath:spring/applicationContext-mybatis.xml"})
+/*@ContextConfiguration({"classpath:spring/applicationContext-service.xml","classpath:spring/applicationContext-mybatis.xml"})*/
+@ContextConfiguration({"classpath:spring/applicationContext.xml"})
 public class BaseTest {
 
 }

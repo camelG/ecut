@@ -29,7 +29,7 @@
 	</properties>
 
 	<dependencies>
-		<!-- spring 核心-->
+		<!-- spring 核心 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -84,7 +84,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- mybatis-->
+		<!-- mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
@@ -97,7 +97,7 @@
 			<version>${spring.mybatis.version}</version>
 		</dependency>
 
-		<!-- 数据库连接-->
+		<!-- 数据库连接 -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -115,7 +115,7 @@
 			<artifactId>druid</artifactId>
 			<version>${druid.version}</version>
 		</dependency>
-		
+
 		<!-- 日志 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -132,14 +132,14 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-		
+
 		<!-- 实现slf4j接口并整合 -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
-		
+
 		<!-- Servlet -->
 		<dependency>
 			<groupId>taglibs</groupId>
@@ -162,18 +162,16 @@
 			<version>${javax.servlet.version}</version>
 		</dependency>
 
-	<dependency>
-		<groupId>org.codehaus.jackson</groupId>
-		<artifactId>jackson-mapper-asl</artifactId>
-		<version>1.9.13</version>
-	</dependency>
-	<dependency>
-		<groupId>org.codehaus.jackson</groupId>
-		<artifactId>jackson-core-asl</artifactId>
-		<version>1.9.13</version>
-	</dependency>
-		
-
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>ecut-demo</finalName>
@@ -184,6 +182,47 @@
 				<configuration>
 					<skip>true</skip>
 				</configuration>
+			</plugin>
+			<!-- jetty插件 -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.25</version>
+				<configuration>
+					<systemProperties>
+						<systemProperty>
+							<name>app.name</name>
+							<value>demo</value>
+						</systemProperty>
+					</systemProperties>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8081</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+					<contextPath>/demo</contextPath>			  <!-- 应用上下文，如果不配置此项,则默认上下文采用artifactId的名称 -->
+					<scanIntervalSeconds>10</scanIntervalSeconds> <!-- 启动热部署,0表示禁用 -->
+				</configuration>
+		<!-- 		<executions>
+					<execution>
+						<id>start-jetty</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start</goal>
+						</goals>
+						<configuration>
+							<scanIntervalSeconds>0</scanIntervalSeconds>
+						</configuration>
+					</execution>
+					<execution>
+						<id>stop-jetty</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions> -->
 			</plugin>
 		</plugins>
 	</build>

@@ -40,7 +40,7 @@ import com.ecut.demo.service.UserService;
 /**
  * @title:
  * @description:
- * @author asua
+ * @author songshuiyang
  * @date 2017年7月16日
  */
 @Controller
