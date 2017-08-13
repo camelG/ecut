@@ -26,16 +26,15 @@
 	<!-- 配置基于注解的声明式事务 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
- 	<!-- 通过AOP配置提供事务增强，让service包下所有Bean的所有方法拥有事务 -->
-<!-- 	<aop:config proxy-target-class="true">
+<!-- 	&lt;!&ndash; 通过AOP配置提供事务增强，让service包下所有Bean的所有方法拥有事务 &ndash;&gt;
+ 	<aop:config proxy-target-class="true">
 		<aop:pointcut id="serviceMethod"
-			expression="(execution(* com.ecut.service..*(..))) and (@annotation(org.springframework.transaction.annotation.Transactional))" />
+			expression="(execution(* com.ecut.demo.service..*(..))) and (@annotation(org.springframework.transaction.annotation.Transactional))" />
 		<aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice" />
 	</aop:config>
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="*" />
 		</tx:attributes>
-	</tx:advice> 
- -->
+	</tx:advice> -->
 </beans>
