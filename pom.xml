@@ -104,12 +104,13 @@
 			<version>${mysql.connector.version}</version>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- 数据源包 -->
 		<dependency>
 			<groupId>c3p0</groupId>
 			<artifactId>c3p0</artifactId>
 			<version>${c3p0.version}</version>
 		</dependency>
-		<!-- 阿里巴巴数据源包 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
