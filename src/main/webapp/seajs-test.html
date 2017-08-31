@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<title></title>
+<body>
+<input value="ddddd" id="input"/>
+</body>
+
+<script src="static/plugins/sea.js"></script>
+<script src="static/js/seajs-config.js"></script>
+
+
+<script>
+    /*    取消下面的注释需要在上方导入jquery src="static/plugins/jquery.1.12.4.min.js"*/
+    /*    seajs.use(['jquery','utils','main','bootstrap','waves','malihu-scrollvar','bootstrapMenu','device','fullPage','jdirk','jquery-coojie','index'],function (jquery,utils,main,$,$,$,$,$,$,$,$,$) {
+        });*/
+    seajs.use(['main', 'utils', 'jquery'], function (main, utils, $) {
+        var msg1 = utils.msg;
+        var msg2 = main.msg;
+        var jquery = $("#input").val();
+        alert(msg1 + msg2 + jquery);
+        utils.sayHello("songshuiyang");
+    });
+</script>
+</html>
