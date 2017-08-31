@@ -26,7 +26,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring/applicationContext.xml</param-value>
+            <param-value>classpath:spring/applicationContext-web.xml</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
@@ -49,16 +49,17 @@
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
-	<filter-mapping>
-		<span style="white-space:pre">
-		</span>
-		<filter-name>encodingFilter</filter-name>
-		<span style="white-space:pre">
-		</span>
-		<url-pattern>/*</url-pattern>
-		<span style="white-space:pre">
-		</span>
-	</filter-mapping>
+
+    <!--	<filter-mapping>
+            <span style="white-space:pre">
+            </span>
+            <filter-name>encodingFilter</filter-name>
+            <span style="white-space:pre">
+            </span>
+            <url-pattern>/*</url-pattern>
+            <span style="white-space:pre">
+            </span>
+        </filter-mapping>-->
 
 	<!-- ContextLoaderListener监听器的作用就是启动Web容器时，自动装配ApplicationContext的配置信息。 
 		因为它实现了ServletContextListener这个接口，在web.xml配置这个监听器，启动容器时，就会默认执行它实现的方法 。至于ApplicationContext.xml这个配置文件部署在哪，如何配置多个xml文件 -->
@@ -68,9 +69,11 @@
 
 	<!-- 它是一个在web应用关闭的时候,清除JavaBeans Introspector的监听器.在web.xml中注册这个listener.可以保证在web 
 		应用关闭的时候释放与掉这个web 应用相关的class loader 和由它管理的类 -->
-	<listener>
-		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-	</listener>
+    <!--
+        <listener>
+            <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+        </listener>
+    -->
 
 	<!-- <listener> <listener-class>com.eigpay.framework.admin.webapp.listener.SpringContextListener</listener-class> 
 		</listener> -->
