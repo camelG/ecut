@@ -24,6 +24,7 @@
 		<javax.servlet.version>3.1.0</javax.servlet.version>
 		<junit.version>4.11</junit.version>
 		<logback.version>1.1.1</logback.version>
+        <pagehelper.version>4.1.6</pagehelper.version>
 		<!-- 其他版本 -->
 		<jdk.version>1.7</jdk.version>
 	</properties>
@@ -96,6 +97,13 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>${spring.mybatis.version}</version>
 		</dependency>
+
+        <!-- 分页插件 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
 
 		<!-- 数据库连接 -->
 		<dependency>

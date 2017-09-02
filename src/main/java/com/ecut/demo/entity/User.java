@@ -8,9 +8,9 @@ public class User {
 
     private String name;
 
-    private Byte sex;
+    private Integer sex;
 
-    private Byte age;
+    private Integer age;
 
     private String address;
 
@@ -37,22 +37,22 @@ public class User {
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
-    public Byte getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(Byte sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 
-    public Byte getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(Byte age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -61,7 +61,7 @@ public class User {
     }
 
     public void setAddress(String address) {
-        this.address = address == null ? null : address.trim();
+        this.address = address;
     }
 
     public Date getBirthday() {
@@ -96,20 +96,11 @@ public class User {
         this.time = time;
     }
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", sex=" + sex + ", age=" + age + ", address=" + address
-				+ ", birthday=" + birthday + ", createtime=" + createtime + ", date=" + date + ", time=" + time
-				+ ", role=" + role + "]";
-	}
+    public List<Role> getRole() {
+        return role;
+    }
 
-	public List<Role> getRole() {
-		return role;
-	}
-
-	public void setRole(List<Role> role) {
-		this.role = role;
-	}
-
-
+    public void setRole(List<Role> role) {
+        this.role = role;
+    }
 }

@@ -17,11 +17,11 @@ public class UserDaoTest extends BaseTest {
     @Resource
     private UserDao userDao;
 
-    @Test
-    public void testQuery(){
-        System.out.println("查询出来的数据：" + userDao.getMatchCount("admin","123456"));
+    /*  @Test
+      public void testQuery(){
+          System.out.println("查询出来的数据：" + userDao.getMatchCount("admin","123456"));
 
-    }
+      }*/
     @Test
     public void testQueryByName(){
         String name = "admin";

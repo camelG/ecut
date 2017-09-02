@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%@include file="common/taglib.jsp" %>
 
+    <link href="${ctx}static/css/index.css" rel="stylesheet"/>
     <link href="${ctx}static/plugins/fullPage/jquery.fullPage.css" rel="stylesheet"/>
     <link href="${ctx}static/plugins/bootstrap/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="${ctx}static/plugins/material-design-iconic-font-2.2.0/css/material-design-iconic-font.min.css"
           rel="stylesheet"/>
     <link href="${ctx}static/plugins/waves-0.7.5/waves.min.css" rel="stylesheet"/>
     <link href="${ctx}static/plugins/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
-    <link href="${ctx}static/css/index.css" rel="stylesheet"/>
+    <link href="${ctx}static/plugins/bootstrap/bootstrap-table-1.11.0/bootstrap-table.min.css" rel="stylesheet"/>
 
 </head>
 <!-- /顶部区 -->
@@ -32,4 +33,8 @@
 <script src="${ctx}static/plugins/fullPage/jquery.jdirk.min.js"></script>
 <script src="${ctx}static/plugins/jquery.cookie.js"></script>
 <script src="${ctx}static/js/index.js"></script>
+<script src="${ctx}static/plugins/bootstrap/bootstrap-table-1.11.0/bootstrap-table.min.js"></script>
+<script src="${ctx}static/plugins/bootstrap/bootstrap-table-1.11.0/locale/bootstrap-table-zh-CN.js"></script>
+<script src="${ctx}static/plugins/sea.js"></script>
+<script src="${ctx}static/js/seajs-config.js"></script>
 

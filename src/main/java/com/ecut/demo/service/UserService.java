@@ -1,11 +1,14 @@
 package com.ecut.demo.service;
 
+import com.ecut.demo.entity.User;
+import com.github.pagehelper.Page;
+
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
-import com.ecut.demo.entity.User;
-
 public interface UserService {
-	 List<User> queryAll();  
+
+    List<User> queryAll();
+
+    Page<User> findPageList(int pageNum, int pageSize, User user);
+
 }

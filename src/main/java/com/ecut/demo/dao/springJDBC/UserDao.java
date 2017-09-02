@@ -22,10 +22,10 @@ public class UserDao {
     private JdbcTemplate jdbcTemplate;
 
 
-    public int getMatchCount(String user,String password){
-        String sqlStr = "SELECT count(*) FROM t_user WHERE user_name = ? AND password = ?";
-        return jdbcTemplate.queryForInt(sqlStr,new Object[]{user,password});
-    }
+    /* public int getMatchCount(String user,String password){
+         String sqlStr = "SELECT count(*) FROM t_user WHERE user_name = ? AND password = ?";
+         return jdbcTemplate.queryForInt(sqlStr,new Object[]{user,password});
+     }*/
     public LoginUser findUserByUserName(final String userName){
         String sqlStr = "SELECT * FROM t_user WHERE user_name = ?";
         final LoginUser loginUser =new LoginUser();

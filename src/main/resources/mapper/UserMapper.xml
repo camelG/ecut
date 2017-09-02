@@ -23,4 +23,8 @@
 		<include refid="Base_Column_List" />
 		from user
 	</select>
+    <select id="findPageList" parameterType="User" resultType="User">
+        SELECT *
+		FROM user
+    </select>
 </mapper>

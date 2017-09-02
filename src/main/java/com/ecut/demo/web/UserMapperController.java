@@ -17,25 +17,23 @@
  
 package com.ecut.demo.web;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.ecut.demo.entity.User;
+import com.ecut.demo.service.UserService;
+import com.github.pagehelper.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ecut.demo.entity.User;
-import com.ecut.demo.service.UserService;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @title:
@@ -68,7 +66,18 @@ public class UserMapperController {
 		printWriter.append("你好"+user.getName());
 		logger.info("--------------->>"+user.toString());
 	}
-	
-	
 
+    @RequestMapping(value = "/query", method = {RequestMethod.GET, RequestMethod.POST})
+    @ResponseBody
+    public Map<String, Object> query(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize, User user) {
+        Map<String, Object> map = new HashMap<>();
+        List<User> userList = new ArrayList<>();
+        Page<User> users = userService.findPageList(pageNum, pageSize, user);
+
+        map.put("records", users);
+        map.put("success", true);
+        map.put("totol", users.getTotal());
+        map.put("status", 0);
+        return map;
+    }
 }

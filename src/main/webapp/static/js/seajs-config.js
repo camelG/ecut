@@ -12,6 +12,7 @@ seajs.config({
         'fullPage': 'plugins/fullPage/jquery.fullPage.min.js',
         'jdirk': 'plugins/fullPage/jquery.jdirk.min.js',
         'jquery-coojie': 'plugins/jquery.cookie.js',
-        'index': 'js/index.js'
+        'index': 'js/index.js',
+        'bootstrapTable': 'plugins/bootstrap/bootstrap-table-1.11.0/bootstrap-table.min.js'
     }
 });

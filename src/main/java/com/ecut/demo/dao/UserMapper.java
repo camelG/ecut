@@ -1,9 +1,14 @@
 package com.ecut.demo.dao;
 
-import java.util.List;
-import java.util.Map;
-
 import com.ecut.demo.entity.User;
+
+import java.util.List;
+
+/**
+ *
+ */
 public interface UserMapper {
-    List<User> queryAll();  
+    List<User> queryAll();
+
+    List<User> findPageList(User user);
 }
