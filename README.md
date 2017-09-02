@@ -3,7 +3,9 @@
 SSM框架：SpringMVC + Spring + MyBatis
 
 Maven:项目管理工具
+
 Git:版本控制工具
+
 
 #### 后端技术:
 技术 | 名称 | 官网
@@ -14,7 +16,7 @@ SpringMVC | MVC框架  | [http://docs.spring.io/spring/docs/current/spring-frame
 (未实现)Spring session | 分布式Session管理  | [http://projects.spring.io/spring-session/](http://projects.spring.io/spring-session/)
 MyBatis | ORM框架  | [http://www.mybatis.org/mybatis-3/zh/index.html](http://www.mybatis.org/mybatis-3/zh/index.html)
 (未实现)MyBatis Generator | 代码生成  | [http://www.mybatis.org/generator/index.html](http://www.mybatis.org/generator/index.html)
-(未实现)PageHelper | MyBatis物理分页插件  | [http://git.oschina.net/free/Mybatis_PageHelper](http://git.oschina.net/free/Mybatis_PageHelper)
+PageHelper | MyBatis分页插件  | [https://github.com/pagehelper/Mybatis-PageHelper.git](https://github.com/pagehelper/Mybatis-PageHelper.git)
 Druid | 数据库连接池  | [https://github.com/alibaba/druid](https://github.com/alibaba/druid)
 (未实现)FluentValidator | 校验框架  | [https://github.com/neoremind/fluent-validator](https://github.com/neoremind/fluent-validator)
 (未实现)Thymeleaf | 模板引擎  | [http://www.thymeleaf.org/](http://www.thymeleaf.org/)
