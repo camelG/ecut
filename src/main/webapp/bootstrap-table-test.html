@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-
-<link href="${ctx}static/plugins/bootstrap/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="${ctx}static/plugins/bootstrap/bootstrap-table-1.11.1/bootstrap-table.min.css" rel="stylesheet"/>
-<section id="content" style="margin-top: -68px;">
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<link href="static/plugins/bootstrap/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="static/plugins/bootstrap/bootstrap-table-1.11.1/bootstrap-table.min.css" rel="stylesheet"/>
+<section id="content">
     <div class="content_tab">
         <div class="tab_left">
             <a class="waves-effect waves-light" href="javascript:;"><i class="zmdi zmdi-chevron-left"></i></a>
@@ -23,14 +23,13 @@
                        data-click-to-select="true"
                        data-striped="true"
                        data-undefined-text="-"
-                       data-url="jdbc/query"
+                       data-url="https://api.github.com/users/wenzhixin/repos"
                        data-side-pagination="server"
                        data-search="true"
                        data-show-refresh="true"
                        data-show-toggle="true"
                        data-show-columns="true"
                        data-pagination="true"
-                <%--     data-height="500"--%>
                        data-page-list="[10, 25, 50, 100,All]">
                     <thead>
                     <tr>
@@ -45,10 +44,10 @@
             </div>
         </div>
     </div>
-    <script src="${ctx}static/plugins/jquery.1.12.4.min.js"></script>
-    <script src="${ctx}static/plugins/bootstrap/bootstrap-3.3.0/js/bootstrap.min.js"></script>
-    <script src="${ctx}static/plugins/bootstrap/bootstrap-table-1.11.1/bootstrap-table.min.js"></script>
-    <script src="${ctx}static/plugins/bootstrap/bootstrap-table-1.11.1/locale/bootstrap-table-zh-CN.js"></script>
+    <script src="static/plugins/jquery.1.12.4.min.js"></script>
+    <script src="static/plugins/bootstrap/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+    <script src="static/plugins/bootstrap/bootstrap-table-1.11.1/bootstrap-table.min.js"></script>
+    <script src="static/plugins/bootstrap/bootstrap-table-1.11.1/locale/bootstrap-table-zh-CN.js"></script>
 
     <script>
         $('#queryContainer').bootstrapTable({
@@ -69,17 +68,22 @@
 
             },
             responseHandler: function (res) {
-                if (res.status == 0) {
-                    var obj = {
-                        "total": res.totol,
-                        "rows": res.records,
-                    };
-                } else {
-                    var obj = {
-                        "total": 0,
-                        "rows": [],
-                    }
-                }
+                var record = new Object();
+                record.name = "songshuiyang";
+                record.age = 12;
+                record.address = "江西赣州市";
+
+                var record1 = new Object();
+                record1.name = "songshuiyang";
+                record1.age = 121;
+                record1.address = "江西赣州市2";
+
+                var array = [record, record1, record, record1];
+                console.log(array);
+                var obj = {
+                    "total": res.length,
+                    "rows": array
+                };
                 return obj;
             }, onLoadSuccess: function () {
                 //加载成功时执行
@@ -99,3 +103,5 @@
 
 </section>
 <footer id="footer"></footer>
+
+</html>

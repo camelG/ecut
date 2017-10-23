@@ -24,7 +24,7 @@
     <%@include file="common/body.jsp" %>
 </section>
 <script src="${ctx}static/plugins/jquery.1.12.4.min.js"></script>
-<script src="${ctx}static/plugins/bootstrap/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<%--<script src="${ctx}static/plugins/bootstrap/bootstrap-3.3.0/js/bootstrap.min.js"></script>--%> <%--会导致按钮失效--%>
 <script src="${ctx}static/plugins/waves-0.7.5/waves.min.js"></script>
 <script src="${ctx}static/plugins/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="${ctx}static/plugins/BootstrapMenu.min.js"></script>
@@ -33,8 +33,6 @@
 <script src="${ctx}static/plugins/fullPage/jquery.jdirk.min.js"></script>
 <script src="${ctx}static/plugins/jquery.cookie.js"></script>
 <script src="${ctx}static/js/index.js"></script>
-<script src="${ctx}static/plugins/bootstrap/bootstrap-table-1.11.0/bootstrap-table.min.js"></script>
-<script src="${ctx}static/plugins/bootstrap/bootstrap-table-1.11.0/locale/bootstrap-table-zh-CN.js"></script>
 <script src="${ctx}static/plugins/sea.js"></script>
 <script src="${ctx}static/js/seajs-config.js"></script>
 
